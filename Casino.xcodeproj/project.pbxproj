@@ -14,6 +14,7 @@
 		498917B729FB317B0021ECC8 /* WarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498917B629FB317B0021ECC8 /* WarView.swift */; };
 		498917B929FB318A0021ECC8 /* SlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498917B829FB318A0021ECC8 /* SlotView.swift */; };
 		498917BB29FB319B0021ECC8 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498917BA29FB319B0021ECC8 /* CardType.swift */; };
+		49C6DD942A0B16FD00A51405 /* GameTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C6DD932A0B16FD00A51405 /* GameTabView.swift */; };
 		49EE93822A0588D90007D9FC /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE93812A0588D90007D9FC /* GameModel.swift */; };
 		49EE93842A058D740007D9FC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE93832A058D740007D9FC /* Game.swift */; };
 		49EE93862A05ADCD0007D9FC /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE93852A05ADCD0007D9FC /* DiceView.swift */; };
@@ -30,6 +31,7 @@
 		498917B629FB317B0021ECC8 /* WarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarView.swift; sourceTree = "<group>"; };
 		498917B829FB318A0021ECC8 /* SlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotView.swift; sourceTree = "<group>"; };
 		498917BA29FB319B0021ECC8 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
+		49C6DD932A0B16FD00A51405 /* GameTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTabView.swift; sourceTree = "<group>"; };
 		49EE93812A0588D90007D9FC /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		49EE93832A058D740007D9FC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		49EE93852A05ADCD0007D9FC /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				498917B829FB318A0021ECC8 /* SlotView.swift */,
 				49EE93852A05ADCD0007D9FC /* DiceView.swift */,
 				49EE93872A05D5010007D9FC /* DiceRoller.swift */,
+				49C6DD932A0B16FD00A51405 /* GameTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				498917BB29FB319B0021ECC8 /* CardType.swift in Sources */,
 				49EE938A2A05D57E0007D9FC /* DiceType.swift in Sources */,
 				498917A929FB2D9E0021ECC8 /* CasinoApp.swift in Sources */,
+				49C6DD942A0B16FD00A51405 /* GameTabView.swift in Sources */,
 				49EE93822A0588D90007D9FC /* GameModel.swift in Sources */,
 				49EE93882A05D5010007D9FC /* DiceRoller.swift in Sources */,
 			);
