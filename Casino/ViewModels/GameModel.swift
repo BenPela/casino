@@ -9,4 +9,5 @@ import Foundation
 
 class GameModel:ObservableObject {
    @Published var games = [Game]()
+    @Published var background = true
 }

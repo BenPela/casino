@@ -71,5 +71,6 @@ struct DiceRoller: View {
 struct DiceRoller_Previews: PreviewProvider {
     static var previews: some View {
         DiceRoller()
+            .environmentObject(GameModel())
     }
 }

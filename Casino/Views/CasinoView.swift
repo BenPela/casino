@@ -8,29 +8,47 @@
 import SwiftUI
 
 struct CasinoView: View {
-    //@ObservedObject var array = GameModel()
+    @EnvironmentObject var gm:GameModel
     var nArray = ["War","Slots","Dice War","Dice Roller"]
     var gArray:[AnyView] = [AnyView(WarView()),AnyView(SlotView()),AnyView(DiceView()),AnyView(DiceRoller())]
     
     var body: some View {
-        
-        NavigationView {
-            
-            List(0..<nArray.count, id: \.self) { n in
+        let bg = gm.background
+        GeometryReader {geo in
+            if bg {
+                Image("background-wood-grain")
+                    .resizable()
+                .ignoresSafeArea()}
+            NavigationView {
                 
-                NavigationLink(destination: gArray[n],
-                               label: {
-                    Text(nArray[n])
-                })
-            }.navigationBarTitle("Games")
-            
+                ScrollView {
+                    VStack{
+                        ForEach (0..<nArray.count, id: \.self) { n in
+                            
+                            NavigationLink(destination: gArray[n],
+                                           label: {
+                                VStack(spacing:0){
+                                    Image("logo")
+                                    Text(nArray[n])
+                                    .foregroundColor(Color.white)}.padding().padding(.horizontal,50.0)
+                                .background(Color.black.opacity(0.5))}).cornerRadius(20)
+                        }
+                        
+                        //            List(0..<nArray.count, id: \.self) { n in
+                        //
+                        //                NavigationLink(destination: gArray[n],
+                        //                               label: {
+                        //                    Text(nArray[n])
+                        //                })
+                        //            }.navigationBarTitle("Games")
+                        
+                    }
+                    
+                    
+                }
+                
+            }
         }
-        .ignoresSafeArea()
-        .background(
-            Image("background-wood-cartoon")
-                .resizable()
-                .scaledToFit())
-        
     }
 }
 struct CasinoView_Previews: PreviewProvider {

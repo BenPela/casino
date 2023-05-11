@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49642C322A0CA22D003F7902 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49642C312A0CA22D003F7902 /* SettingsView.swift */; };
 		498917A929FB2D9E0021ECC8 /* CasinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498917A829FB2D9E0021ECC8 /* CasinoApp.swift */; };
 		498917AB29FB2D9E0021ECC8 /* CasinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498917AA29FB2D9E0021ECC8 /* CasinoView.swift */; };
 		498917AD29FB2DA00021ECC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 498917AC29FB2DA00021ECC8 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49642C312A0CA22D003F7902 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		498917A529FB2D9E0021ECC8 /* Casino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Casino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		498917A829FB2D9E0021ECC8 /* CasinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoApp.swift; sourceTree = "<group>"; };
 		498917AA29FB2D9E0021ECC8 /* CasinoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoView.swift; sourceTree = "<group>"; };
@@ -90,12 +92,13 @@
 		49EE937E2A0587710007D9FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				49C6DD932A0B16FD00A51405 /* GameTabView.swift */,
 				498917AA29FB2D9E0021ECC8 /* CasinoView.swift */,
 				498917B629FB317B0021ECC8 /* WarView.swift */,
 				498917B829FB318A0021ECC8 /* SlotView.swift */,
 				49EE93852A05ADCD0007D9FC /* DiceView.swift */,
 				49EE93872A05D5010007D9FC /* DiceRoller.swift */,
-				49C6DD932A0B16FD00A51405 /* GameTabView.swift */,
+				49642C312A0CA22D003F7902 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				49EE938A2A05D57E0007D9FC /* DiceType.swift in Sources */,
 				498917A929FB2D9E0021ECC8 /* CasinoApp.swift in Sources */,
 				49C6DD942A0B16FD00A51405 /* GameTabView.swift in Sources */,
+				49642C322A0CA22D003F7902 /* SettingsView.swift in Sources */,
 				49EE93822A0588D90007D9FC /* GameModel.swift in Sources */,
 				49EE93882A05D5010007D9FC /* DiceRoller.swift in Sources */,
 			);

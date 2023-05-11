@@ -12,6 +12,8 @@ struct CasinoApp: App {
     var body: some Scene {
         WindowGroup {
             GameTabView()
+            .environmentObject(GameModel())
+            
         }
     }
 }
