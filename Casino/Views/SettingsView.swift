@@ -12,7 +12,10 @@ struct SettingsView: View {
     var body: some View {
         VStack{
             Text("Settings")
-            Toggle(isOn: $gm.background, label: {Text("Card Style List")})
+            Divider()
+            Text("War")
+                .multilineTextAlignment(.leading)
+            Toggle(isOn: $gm.background, label: {Text("Background Image")}).padding(.horizontal)
             /*Toggle(isOn: $gm.background, label: {Text("Card Style List")})
             Toggle(isOn: $gm.background, label: {Text("Card Style List")})
             Toggle(isOn: $gm.background, label: {Text("Card Style List")})*/

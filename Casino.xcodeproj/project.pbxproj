@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		49642C322A0CA22D003F7902 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49642C312A0CA22D003F7902 /* SettingsView.swift */; };
+		497A8A1C2A0D38DF001178AA /* CardFlipperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A8A1B2A0D38DF001178AA /* CardFlipperView.swift */; };
+		497A8A1E2A0D3B33001178AA /* GameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A8A1D2A0D3B33001178AA /* GameListView.swift */; };
+		497A8A202A0D437D001178AA /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497A8A1F2A0D437D001178AA /* RandomColor.swift */; };
 		498917A929FB2D9E0021ECC8 /* CasinoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498917A829FB2D9E0021ECC8 /* CasinoApp.swift */; };
 		498917AB29FB2D9E0021ECC8 /* CasinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498917AA29FB2D9E0021ECC8 /* CasinoView.swift */; };
 		498917AD29FB2DA00021ECC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 498917AC29FB2DA00021ECC8 /* Assets.xcassets */; };
@@ -25,6 +28,9 @@
 
 /* Begin PBXFileReference section */
 		49642C312A0CA22D003F7902 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		497A8A1B2A0D38DF001178AA /* CardFlipperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardFlipperView.swift; sourceTree = "<group>"; };
+		497A8A1D2A0D3B33001178AA /* GameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListView.swift; sourceTree = "<group>"; };
+		497A8A1F2A0D437D001178AA /* RandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColor.swift; sourceTree = "<group>"; };
 		498917A529FB2D9E0021ECC8 /* Casino.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Casino.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		498917A829FB2D9E0021ECC8 /* CasinoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoApp.swift; sourceTree = "<group>"; };
 		498917AA29FB2D9E0021ECC8 /* CasinoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasinoView.swift; sourceTree = "<group>"; };
@@ -94,10 +100,12 @@
 			children = (
 				49C6DD932A0B16FD00A51405 /* GameTabView.swift */,
 				498917AA29FB2D9E0021ECC8 /* CasinoView.swift */,
+				497A8A1D2A0D3B33001178AA /* GameListView.swift */,
 				498917B629FB317B0021ECC8 /* WarView.swift */,
 				498917B829FB318A0021ECC8 /* SlotView.swift */,
 				49EE93852A05ADCD0007D9FC /* DiceView.swift */,
 				49EE93872A05D5010007D9FC /* DiceRoller.swift */,
+				497A8A1B2A0D38DF001178AA /* CardFlipperView.swift */,
 				49642C312A0CA22D003F7902 /* SettingsView.swift */,
 			);
 			path = Views;
@@ -109,6 +117,7 @@
 				498917BA29FB319B0021ECC8 /* CardType.swift */,
 				49EE93832A058D740007D9FC /* Game.swift */,
 				49EE93892A05D57E0007D9FC /* DiceType.swift */,
+				497A8A1F2A0D437D001178AA /* RandomColor.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,9 +201,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				498917AB29FB2D9E0021ECC8 /* CasinoView.swift in Sources */,
+				497A8A202A0D437D001178AA /* RandomColor.swift in Sources */,
 				49EE93862A05ADCD0007D9FC /* DiceView.swift in Sources */,
+				497A8A1E2A0D3B33001178AA /* GameListView.swift in Sources */,
 				498917B729FB317B0021ECC8 /* WarView.swift in Sources */,
 				49EE93842A058D740007D9FC /* Game.swift in Sources */,
+				497A8A1C2A0D38DF001178AA /* CardFlipperView.swift in Sources */,
 				498917B929FB318A0021ECC8 /* SlotView.swift in Sources */,
 				498917BB29FB319B0021ECC8 /* CardType.swift in Sources */,
 				49EE938A2A05D57E0007D9FC /* DiceType.swift in Sources */,

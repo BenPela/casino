@@ -77,7 +77,7 @@ struct WarView: View {
                    
                 }.foregroundColor(.white).font(.headline).position(x:geo.frame(in: .local).midX)
                 //Logo
-                Image("logo").resizable().aspectRatio(contentMode: .fit).frame(width: geo.size.width/1.3, height: geo.size.height/1.3).position(x:geo.frame(in: .global).midX, y:geo.frame(in: .local).midY)
+                Image("War").resizable().aspectRatio(contentMode: .fit).frame(width: geo.size.width/1.3, height: geo.size.height/1.3).position(x:geo.frame(in: .global).midX, y:geo.frame(in: .local).midY)
                         
                 }.padding(.bottom)
                 //Cards
