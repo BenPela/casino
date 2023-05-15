@@ -13,18 +13,19 @@ struct CardFlipperView: View {
         GeometryReader{geo in
             
             TabView{
-                let card = Int.random(in: 1...50)
+                
                 ForEach (1..<51) { i in
+                    let cardNum = Int.random(in: 1...50)
                 ZStack{
                     
                         Rectangle()
                         .foregroundColor(Color(RandomColour.generate()))
                             .frame(width: geo.size.width-40, height: geo.size.height-100, alignment: .center)
                             .cornerRadius(20)
-                            .shadow(color: (Color(red: Double.random(in: 0..<1), green: Double.random(in: 0..<1), blue: Double.random(in: 0..<1)).opacity(0.9)), radius: 15)
+                            .shadow(color: RandomColour.colorView(), radius: 25)
                             
                         
-                        Image(systemName: "\(card).circle").resizable().aspectRatio(contentMode: .fit)
+                    Image(systemName: "\(cardNum).circle").resizable().aspectRatio(contentMode: .fit)
                             .frame(width: geo.size.width-80, height: geo.size.height-100, alignment: .center)
                     }
                 }

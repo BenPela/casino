@@ -11,13 +11,14 @@ struct GameListView: View {
     @EnvironmentObject var gm: GameModel
     var body: some View {
         NavigationView {
-            List(0..<gm.nArray.count, id: \.self) { n in
+            List(0..<gm.gameNames.count, id: \.self) { n in
             
-                NavigationLink(destination: gm.gArray[n],
+                NavigationLink(destination: gm.gameList[n],
                                            label: {
-                    Text(gm.nArray[n])
+                    Text(gm.gameNames[n])
                             })
-                        }.navigationBarTitle("Games")
+                        }//.navigationBarTitle("Games")
+            .navigationBarHidden(true)
             
         }
     }

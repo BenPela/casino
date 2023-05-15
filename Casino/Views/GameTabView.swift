@@ -30,6 +30,7 @@ struct GameTabView: View {
                 }.tag(2)
             
         }
+        .tabViewStyle(.automatic)
     }
 }
 
