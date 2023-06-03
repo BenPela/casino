@@ -14,9 +14,6 @@ struct DiceView: View {
     @State var pScore = 0
     @State var cScore = 0
     @State var tie = 0
-    //@State var rSlot = 3
-    //@State var GameOver = false
-    
     
     var body: some View {
         

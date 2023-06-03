@@ -12,17 +12,11 @@ struct CasinoView: View {
     let textBackgroundRadius:CGFloat = 150
     var body: some View {
         
-        ZStack {
-            
-            //           GeometryReader{ geo in
-            //            if bg {
-            //                Image("background-wood-grain")
-            //                    .resizable()
-            //                .ignoresSafeArea()}
+      //  ZStack {
             NavigationView {
                 GeometryReader{ geo in
                 ScrollView {
-                    //Text(String(gm.background)).foregroundColor(.white)
+
                     LazyVStack{
                         
                         ForEach (0..<gm.gameNames.count, id: \.self) { n in
@@ -61,7 +55,7 @@ struct CasinoView: View {
                     }
                 }.background(backgroundStatus)}
             }
-        }
+         //}
         
     }
     
