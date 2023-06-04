@@ -17,9 +17,8 @@ struct GameListView: View {
                                            label: {
                     Text(gm.gameNames[n])
                             })
-                        }//.navigationBarTitle("Games")
-            .navigationBarHidden(true)
-            
+                        }
+            .navigationTitle("All Games") 
         }
     }
 }

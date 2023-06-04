@@ -8,9 +8,8 @@ import SwiftUI
 import Foundation
 
 class GameModel:ObservableObject {
-  //  @Published var games = [Game]()
     @Published var background = true
-    @Published var backgroundImage = "Cloth"
+    @Published var backgroundImage = "Plain"
     var gameNames = ["War","Slots","Dice War","Dice Roller","Card Flipper"]
     var gameList:[AnyView] = [AnyView(WarView()),AnyView(SlotView()),AnyView(DiceView()),AnyView(DiceRoller()),AnyView(CardFlipperView())]
 }

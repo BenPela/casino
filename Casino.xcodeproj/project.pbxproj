@@ -18,6 +18,7 @@
 		498917B729FB317B0021ECC8 /* WarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498917B629FB317B0021ECC8 /* WarView.swift */; };
 		498917B929FB318A0021ECC8 /* SlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498917B829FB318A0021ECC8 /* SlotView.swift */; };
 		498917BB29FB319B0021ECC8 /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498917BA29FB319B0021ECC8 /* CardType.swift */; };
+		49AA4DB72A2D3D7A00A48167 /* GameCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AA4DB62A2D3D7A00A48167 /* GameCardView.swift */; };
 		49C6DD942A0B16FD00A51405 /* GameTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C6DD932A0B16FD00A51405 /* GameTabView.swift */; };
 		49EE93822A0588D90007D9FC /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE93812A0588D90007D9FC /* GameModel.swift */; };
 		49EE93842A058D740007D9FC /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EE93832A058D740007D9FC /* Game.swift */; };
@@ -39,6 +40,7 @@
 		498917B629FB317B0021ECC8 /* WarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarView.swift; sourceTree = "<group>"; };
 		498917B829FB318A0021ECC8 /* SlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotView.swift; sourceTree = "<group>"; };
 		498917BA29FB319B0021ECC8 /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
+		49AA4DB62A2D3D7A00A48167 /* GameCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCardView.swift; sourceTree = "<group>"; };
 		49C6DD932A0B16FD00A51405 /* GameTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTabView.swift; sourceTree = "<group>"; };
 		49EE93812A0588D90007D9FC /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		49EE93832A058D740007D9FC /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				498917A829FB2D9E0021ECC8 /* CasinoApp.swift */,
 				49EE93802A0587F30007D9FC /* ViewModels */,
 				49EE937E2A0587710007D9FC /* Views */,
+				49AA4DB52A2D3B3B00A48167 /* GameViews */,
 				49EE937F2A0587880007D9FC /* Models */,
 				498917AC29FB2DA00021ECC8 /* Assets.xcassets */,
 				498917AE29FB2DA00021ECC8 /* Preview Content */,
@@ -95,18 +98,26 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		49AA4DB52A2D3B3B00A48167 /* GameViews */ = {
+			isa = PBXGroup;
+			children = (
+				498917B629FB317B0021ECC8 /* WarView.swift */,
+				498917B829FB318A0021ECC8 /* SlotView.swift */,
+				49EE93852A05ADCD0007D9FC /* DiceView.swift */,
+				49EE93872A05D5010007D9FC /* DiceRoller.swift */,
+				497A8A1B2A0D38DF001178AA /* CardFlipperView.swift */,
+			);
+			path = GameViews;
+			sourceTree = "<group>";
+		};
 		49EE937E2A0587710007D9FC /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				49C6DD932A0B16FD00A51405 /* GameTabView.swift */,
 				498917AA29FB2D9E0021ECC8 /* CasinoView.swift */,
 				497A8A1D2A0D3B33001178AA /* GameListView.swift */,
-				498917B629FB317B0021ECC8 /* WarView.swift */,
-				498917B829FB318A0021ECC8 /* SlotView.swift */,
-				49EE93852A05ADCD0007D9FC /* DiceView.swift */,
-				49EE93872A05D5010007D9FC /* DiceRoller.swift */,
-				497A8A1B2A0D38DF001178AA /* CardFlipperView.swift */,
 				49642C312A0CA22D003F7902 /* SettingsView.swift */,
+				49AA4DB62A2D3D7A00A48167 /* GameCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -212,6 +223,7 @@
 				49EE938A2A05D57E0007D9FC /* DiceType.swift in Sources */,
 				498917A929FB2D9E0021ECC8 /* CasinoApp.swift in Sources */,
 				49C6DD942A0B16FD00A51405 /* GameTabView.swift in Sources */,
+				49AA4DB72A2D3D7A00A48167 /* GameCardView.swift in Sources */,
 				49642C322A0CA22D003F7902 /* SettingsView.swift in Sources */,
 				49EE93822A0588D90007D9FC /* GameModel.swift in Sources */,
 				49EE93882A05D5010007D9FC /* DiceRoller.swift in Sources */,
