@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SlotView: View {
+    @EnvironmentObject var gm: GameModel
+    
     @State var score = 1000
     @State var lSlot = 3
     @State var cSlot = 3
@@ -16,43 +18,53 @@ struct SlotView: View {
     
     
     var body: some View {
+        let bg = gm.background
         
-        VStack {
+        ZStack {
+            if (bg == true) { Image(gm.backgroundImage)
+                    .resizable()
+                .ignoresSafeArea(.all, edges: .top)}
             
-            Text("SwiftUISlots").font(.largeTitle).padding([.leading, .bottom, .trailing])
-            Spacer()
-            HStack{
-                Button(action: {reset()}, label: {Image(systemName: "gobackward")})
-                Text("Score :")
-                Text(String(score))}
-            
-            Spacer()
-           
-            HStack {
-                if lSlot == 1 {Image("apple").resizable().aspectRatio(contentMode: .fit)}else if lSlot == 2{Image("cherry").resizable().aspectRatio(contentMode: .fit)}else {Image("star").resizable().aspectRatio(contentMode: .fit)}
-                if cSlot == 1 {Image("apple").resizable().aspectRatio(contentMode: .fit)}else if cSlot == 2{Image("cherry").resizable().aspectRatio(contentMode: .fit)}else {Image("star").resizable().aspectRatio(contentMode: .fit)}
-                if rSlot == 1 {Image("apple").resizable().aspectRatio(contentMode: .fit)}else if rSlot == 2{Image("cherry").resizable().aspectRatio(contentMode: .fit)}else {Image("star").resizable().aspectRatio(contentMode: .fit)}
-            }.padding()
-            Spacer()
-            if GameOver == true {
-                Text("Game Over").font(.largeTitle)
-                Button {reset()
-                    }
-                label: {Text("New Game")}
+            VStack {
                 
-            }else{
-                Button("Spin") {
-                    spin()
-                }.padding().padding([.leading, .trailing], 40)
-                        .background(Color.red)
-                        .cornerRadius(50)
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 18, weight: .bold, design: .default))
-                
-            }
+                Text("SwiftUISlots").font(.largeTitle).padding([.leading, .bottom, .trailing])
                 Spacer()
-            }
-        .padding()
+                //MARK: SCORE
+                HStack{
+                    Button(action: {reset()}, label: {Image(systemName: "gobackward")})
+                    Text("Score :")
+                    Text(String(score))
+                }
+                
+                Spacer()
+               //MARK: Rollers
+                HStack {
+                    if lSlot == 1 {Image("apple").resizable().aspectRatio(contentMode: .fit)}else if lSlot == 2{Image("cherry").resizable().aspectRatio(contentMode: .fit)}else {Image("star").resizable().aspectRatio(contentMode: .fit)}
+                    if cSlot == 1 {Image("apple").resizable().aspectRatio(contentMode: .fit)}else if cSlot == 2{Image("cherry").resizable().aspectRatio(contentMode: .fit)}else {Image("star").resizable().aspectRatio(contentMode: .fit)}
+                    if rSlot == 1 {Image("apple").resizable().aspectRatio(contentMode: .fit)}else if rSlot == 2{Image("cherry").resizable().aspectRatio(contentMode: .fit)}else {Image("star").resizable().aspectRatio(contentMode: .fit)}
+                }.padding()
+                Spacer()
+                if GameOver == true {
+                    Text("Game Over").font(.largeTitle)
+                    Button {reset()
+                        }
+                    label: {Text("New Game")}
+                    
+                }else{
+                    Button("Spin") {
+                        spin()
+                    }.padding().padding([.leading, .trailing], 40)
+                            .background(Color.red)
+                            .cornerRadius(50)
+                            .foregroundColor(Color.white)
+                            .font(.system(size: 18, weight: .bold, design: .default))
+                    
+                }
+                    Spacer()
+                }
+            .padding()
+            .foregroundColor(bg == true ? .white : .black)
+        }
 }
     
     
@@ -87,5 +99,6 @@ struct SlotView: View {
 struct SlotView_Previews: PreviewProvider {
     static var previews: some View {
         SlotView()
+            .environmentObject(GameModel())
     }
 }

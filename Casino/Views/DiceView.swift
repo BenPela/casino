@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DiceView: View {
-
+    @EnvironmentObject var gm: GameModel
     @State var d1 = 1
     @State var d2 = 1
     @State var pScore = 0
@@ -16,73 +16,79 @@ struct DiceView: View {
     @State var tie = 0
     
     var body: some View {
-        
-        VStack {
-            Spacer()
-            Text("Dice Game").font(.largeTitle).padding([.leading, .bottom, .trailing])
-            Spacer()
-            
-            HStack {
-                Image("d6.\(d1)").resizable().aspectRatio(contentMode: .fit)
-                Image("d6.\(d2)").resizable().aspectRatio(contentMode: .fit)
-            }.padding()
-            Spacer()
-            Button("Roll") {
-                roll()
-            }.padding().padding([.leading, .trailing], 40)
-                    .background(Color.red)
-                    .cornerRadius(50)
-                    .foregroundColor(Color.white)
-                    .font(.system(size: 18, weight: .bold, design: .default))
-            Spacer()
-            
-            HStack{
-                
+        let bg = gm.background
+        ZStack {
+            if (bg == true) { Image(gm.backgroundImage)
+                                .resizable()
+                            .ignoresSafeArea(.all, edges: .top)}
+            VStack {
+                Spacer()
+                Text("Dice Game").font(.largeTitle).padding([.leading, .bottom, .trailing])
                 Spacer()
                 
-                VStack{
-                    Text("Player").font(.headline).padding(.bottom, 5.0)
-                    Text(String (pScore)).font(.largeTitle)
-                }
-                
+                HStack {
+                    Image("d6.\(d1)").resizable().aspectRatio(contentMode: .fit)
+                    Image("d6.\(d2)").resizable().aspectRatio(contentMode: .fit)
+                }.padding()
+                Spacer()
+                Button("Roll") {
+                    roll()
+                }.padding().padding([.leading, .trailing], 40)
+                        .background(Color.red)
+                        .cornerRadius(50)
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 18, weight: .bold, design: .default))
                 Spacer()
                 
-                VStack{
-                    Text("CPU").font(.headline).padding(.bottom, 5.0)
-                    Text(String(cScore)).font(.largeTitle)
-                }
-                
-                Spacer()
+                HStack{
+                    
+                    Spacer()
+                    
+                    VStack{
+                        Text("Player").font(.headline).padding(.bottom, 5.0)
+                        Text(String (pScore)).font(.largeTitle)
+                    }
+                    
+                    Spacer()
+                    
+                    VStack{
+                        Text("CPU").font(.headline).padding(.bottom, 5.0)
+                        Text(String(cScore)).font(.largeTitle)
+                    }
+                    
+                    Spacer()
 
-                VStack{
-                    Text("Tie").font(.headline).padding(.bottom, 5.0)
-                    Text(String(tie)).font(.largeTitle)
+                    VStack{
+                        Text("Tie").font(.headline).padding(.bottom, 5.0)
+                        Text(String(tie)).font(.largeTitle)
+                    }
+                    
+                    Spacer()
+                    
                 }
-                
+              
+    //            if GameOver == true {
+    //                Text("Game Over").font(.largeTitle)
+    //                Button {reset()
+    //                    }
+    //                label: {Text("New Game")}
+    //
+    //            }else{
+                    
                 Spacer()
+                Button("Reset") {
+                    reset()
+                }.padding().padding([.leading, .trailing], 15)
+                        .background(Color.green)
+                        .cornerRadius(50)
+                        .foregroundColor(Color.white)
+                        .font(.system(size: 15, weight: .bold, design: .default))
+        
                 
-            }
-          
-//            if GameOver == true {
-//                Text("Game Over").font(.largeTitle)
-//                Button {reset()
-//                    }
-//                label: {Text("New Game")}
-//
-//            }else{
-                
-            Spacer()
-            Button("Reset") {
-                reset()
-            }.padding().padding([.leading, .trailing], 15)
-                    .background(Color.green)
-                    .cornerRadius(50)
-                    .foregroundColor(Color.white)
-                    .font(.system(size: 15, weight: .bold, design: .default))
-    
-            
-            }
-        .padding()
+                }
+            .padding()
+            .foregroundColor(bg == true ? .white : .black)
+        }
 }
     
     
@@ -115,5 +121,6 @@ struct DiceView: View {
 struct DiceView_Previews: PreviewProvider {
     static var previews: some View {
         DiceView()
+            .environmentObject(GameModel())
     }
 }

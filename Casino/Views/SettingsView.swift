@@ -9,13 +9,14 @@ import SwiftUI
 
 struct SettingsView: View {
     @EnvironmentObject var gm: GameModel
-    @State var selectedWP = "Wood"
+    // @State var selectedWP = "Wood"
     
     var body: some View {
+        
         VStack{
             Text("Settings")
                 .font(.largeTitle)
-                
+            
             Divider()
                 .frame(width: 1.0, height: 1.0)
             HStack{
@@ -23,37 +24,38 @@ struct SettingsView: View {
                     Text("Wallpaper: On")} else
                 {Text("Wallpaper: Off")}
                 Spacer()
-                Text("Image: \(selectedWP)")}.font(.title2).multilineTextAlignment(.leading)
+                Text("Image: \(gm.backgroundImage)")}
+            .multilineTextAlignment(.leading)
             
             
             Toggle(isOn: $gm.background, label: {Text("Background Image")})
-            /*Toggle(isOn: $gm.background, label: {Text("Card Style List")})
-            Toggle(isOn: $gm.background, label: {Text("Card Style List")})
-            Toggle(isOn: $gm.background, label: {Text("Card Style List")})*/
-            
+            //MARK: examples of background selectors
             HStack{
                 Text("Background Image")
                 Spacer()
-                Picker("Wallpaper Image", selection: $selectedWP){
-                    Text("Green").tag("Green")
+                Picker("Wallpaper Image", selection: $gm.backgroundImage){
+                    Text("Plain").tag("Plain")
                     Text("Wood").tag("Wood")
+                    Text("Cartoon Wood").tag("Cartoon Wood")
                     Text("Cloth").tag("Cloth")
                 }.pickerStyle(MenuPickerStyle())
             }
-            Text("Background Image")
+
             HStack{
-                Picker("Wallpaper Image", selection: $selectedWP){
-                    Text("Green").tag("Green")
+                Picker("Wallpaper Image", selection: $gm.backgroundImage){
+                    Text("Plain").tag("Plain")
                     Text("Wood").tag("Wood")
+                    Text("Cartoon Wood").tag("Cartoon Wood")
                     Text("Cloth").tag("Cloth")
                 }.pickerStyle(SegmentedPickerStyle())
             }
-          
-            Text("Background Image")
+            
+           
             HStack{
-                Picker("Wallpaper Image", selection: $selectedWP){
-                    Text("Green").tag("Green")
+                Picker("Wallpaper Image", selection: $gm.backgroundImage){
+                    Text("Plain").tag("Plain")
                     Text("Wood").tag("Wood")
+                    Text("Cartoon Wood").tag("Cartoon Wood")
                     Text("Cloth").tag("Cloth")
                 }.pickerStyle(WheelPickerStyle())
             }

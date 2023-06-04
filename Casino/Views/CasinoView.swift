@@ -61,7 +61,7 @@ struct CasinoView: View {
     
     var backgroundStatus: some View {
         if gm.background {
-        return AnyView(Image("background-wood-grain"))
+        return AnyView(Image(gm.backgroundImage))
 //                .resizable()
 //                .aspectRatio(contentMode: .fill)
 //                .ignoresSafeArea()

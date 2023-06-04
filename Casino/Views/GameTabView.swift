@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GameTabView: View {
     @EnvironmentObject var gm: GameModel
-    @State var tabIndex = 3
+    @State var tabIndex = 1
     var body: some View {
         TabView(selection: $tabIndex){
             

@@ -7,11 +7,18 @@
 
 import SwiftUI
 
+
 struct CardFlipperView: View {
+    @EnvironmentObject var gm: GameModel
+    
     var body: some View {
+        let bg = gm.background
+        
         
         GeometryReader{geo in
-            
+            if (bg == true) { Image(gm.backgroundImage)
+                                .resizable()
+                            .ignoresSafeArea(.all, edges: .top)}
             TabView{
                 
                 ForEach (1..<51) { i in
@@ -27,15 +34,17 @@ struct CardFlipperView: View {
                         
                     Image(systemName: "\(cardNum).circle").resizable().aspectRatio(contentMode: .fit)
                             .frame(width: geo.size.width-80, height: geo.size.height-100, alignment: .center)
+                            .foregroundColor(bg == true ? .white : .black)
                     }
                 }
-            }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))
-                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode:.always))
+            }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+                .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode:.never))
         }
     }}
 
 struct CardFlipperView_Previews: PreviewProvider {
     static var previews: some View {
         CardFlipperView()
+            .environmentObject(GameModel())
     }
 }
