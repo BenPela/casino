@@ -1,3 +1,4 @@
+// assign values to suits to make Comparable
 enum Suit: Int, CaseIterable {
     case s = 0
     case h = 1
@@ -8,20 +9,23 @@ enum Suit: Int, CaseIterable {
 import Foundation
 
 struct CardType: Identifiable, Equatable, Comparable {
-    
+    //set id based on combo of card rank and suit
     var id: String {
         return String(rank) + String(describing: suit)
     }
     var rank:Int
     var suit:Suit
+    //image names formatted as "rank_of_suit"
     var imageName:String {
         String(rank) + "_of_" + String(describing: suit)}
     
     static var cardTypes: [CardType] {
         var cardTypes: [CardType] = []
+        // create a card for each rank in each suit
         for suit in Suit.allCases {
             for rank in 2...14 {
                 let card = CardType(rank: rank, suit: suit)
+                // add card to the deck
                 cardTypes.append(card)
             }
         }
@@ -29,11 +33,6 @@ struct CardType: Identifiable, Equatable, Comparable {
     }
     // compare cards
     static func < (lhs: CardType, rhs: CardType) -> Bool {
-        //        print("left Card" + lhs.imageName)
-        //        print("right Card" + rhs.imageName)
-        //        print("is tie?" + String(lhs == rhs))
-        //        print("player win?" + String(lhs.rank<rhs.rank))
-        //        print("cpu win?" + String(lhs.rank>rhs.rank))
         if lhs.rank == rhs.rank {
             return lhs.suit.rawValue < rhs.suit.rawValue
         } else {

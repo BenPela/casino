@@ -16,82 +16,100 @@ struct DiceView: View {
     @State var tie = 0
     
     var body: some View {
+        //Background settings check
         let bg = gm.background
         ZStack {
-            if (bg == true) { Image(gm.backgroundImage)
-                                .resizable()
-                            .ignoresSafeArea(.all, edges: .top)}
+            if (bg == true) {
+                Image(gm.backgroundImage)
+                    .resizable()
+                    .ignoresSafeArea(.all, edges: .top)
+                
+            }
             VStack {
                 Spacer()
-                Text("Dice Game").font(.largeTitle).padding([.leading, .bottom, .trailing])
+                Text("Dice Game")
+                    .font(.largeTitle)
+                    .padding([.leading, .bottom, .trailing])
                 Spacer()
-                
+                //MARK: Dice Images
                 HStack {
-                    Image("d6.\(d1)").resizable().aspectRatio(contentMode: .fit)
-                    Image("d6.\(d2)").resizable().aspectRatio(contentMode: .fit)
-                }.padding()
+                    //image names are formatted "d(numberOfSides).(faceValue)
+                    Image("d6.\(d1)")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    Image("d6.\(d2)")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+                .padding()
                 Spacer()
+                //Roll Button
                 Button("Roll") {
                     roll()
-                }.padding().padding([.leading, .trailing], 40)
-                        .background(Color.red)
-                        .cornerRadius(50)
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 18, weight: .bold, design: .default))
+                }
+                .padding()
+                .padding([.leading, .trailing], 40)
+                .background(Color.red)
+                .cornerRadius(50)
+                .foregroundColor(Color.white)
+                .font(.system(size: 18, weight: .bold, design: .default))
                 Spacer()
-                
+                //MARK: scoreboard
                 HStack{
                     
                     Spacer()
                     
                     VStack{
-                        Text("Player").font(.headline).padding(.bottom, 5.0)
-                        Text(String (pScore)).font(.largeTitle)
+                        Text("Player")
+                            .font(.headline)
+                            .padding(.bottom, 5.0)
+                        Text(String (pScore))
+                            .font(.largeTitle)
                     }
                     
                     Spacer()
                     
                     VStack{
-                        Text("CPU").font(.headline).padding(.bottom, 5.0)
-                        Text(String(cScore)).font(.largeTitle)
+                        Text("CPU")
+                            .font(.headline)
+                            .padding(.bottom, 5.0)
+                        Text(String(cScore))
+                            .font(.largeTitle)
                     }
                     
                     Spacer()
-
+                    
                     VStack{
-                        Text("Tie").font(.headline).padding(.bottom, 5.0)
-                        Text(String(tie)).font(.largeTitle)
+                        Text("Tie")
+                            .font(.headline)
+                            .padding(.bottom, 5.0)
+                        Text(String(tie))
+                            .font(.largeTitle)
                     }
                     
                     Spacer()
                     
                 }
-              
-    //            if GameOver == true {
-    //                Text("Game Over").font(.largeTitle)
-    //                Button {reset()
-    //                    }
-    //                label: {Text("New Game")}
-    //
-    //            }else{
-                    
+                
                 Spacer()
                 Button("Reset") {
                     reset()
-                }.padding().padding([.leading, .trailing], 15)
-                        .background(Color.green)
-                        .cornerRadius(50)
-                        .foregroundColor(Color.white)
-                        .font(.system(size: 15, weight: .bold, design: .default))
-        
+                }.padding()
+                    .padding([.leading, .trailing], 15)
+                    .background(Color.green)
+                    .cornerRadius(50)
+                    .foregroundColor(Color.white)
+                    .font(.system(size: 15, weight: .bold, design: .default))
                 
-                }
+                
+            }
             .padding()
             .foregroundColor(bg == true ? .white : .black)
         }
-}
+    }
     
-    
+    // MARK: Functions
+    // Roll
     func roll() {
         //Spin Slots
         let d1v = Int.random(in: 1...6)
@@ -102,22 +120,25 @@ struct DiceView: View {
         //rSlot = slot3V
         //Check Score
         if d1 > d2 {
-        pScore += 1}
+            pScore += 1}
         else if d2 > d1 {
-        cScore += 1}
+            cScore += 1}
         else {tie += 1}
     }
+    //NEW GAME
     func reset() {
-         d1 = 1
-         d2 = 1
-         pScore = 0
-         cScore = 0
-         tie = 0
+        d1 = 1
+        d2 = 1
+        pScore = 0
+        cScore = 0
+        tie = 0
     }
     
     
 }
 
+
+//MARK: Preview Code
 struct DiceView_Previews: PreviewProvider {
     static var previews: some View {
         DiceView()

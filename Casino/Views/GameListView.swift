@@ -12,17 +12,19 @@ struct GameListView: View {
     var body: some View {
         NavigationView {
             List(0..<gm.gameNames.count, id: \.self) { n in
-            
-                NavigationLink(destination: gm.gameList[n],
-                                           label: {
-                    Text(gm.gameNames[n])
-                            })
-                        }
-            .navigationTitle("All Games") 
+                
+                NavigationLink(
+                    destination: gm.gameList[n],
+                    label: {
+                        Text(gm.gameNames[n])
+                    })
+            }
+            .navigationTitle("All Games")
         }
     }
 }
 
+//MARK: Preview Code
 struct GameListView_Previews: PreviewProvider {
     static var previews: some View {
         GameListView()

@@ -11,8 +11,8 @@ struct DiceRoller: View {
     @State var total2 = 0
     
     var body: some View {
+        //Background settings check 
         let bg = gm.background
-        
         ZStack {
             if (bg == true) { Image(gm.backgroundImage)
                     .resizable()

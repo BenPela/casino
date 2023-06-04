@@ -12,5 +12,4 @@ struct Game: View, Identifiable {
     let title: String
     var id:UUID? = nil
     var body: AnyView
-    //var image:String
 }

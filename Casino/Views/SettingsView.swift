@@ -16,19 +16,25 @@ struct SettingsView: View {
         VStack{
             Text("Settings")
                 .font(.largeTitle)
-            
             Divider()
                 .frame(width: 1.0, height: 1.0)
             HStack{
                 if gm.background {
-                    Text("Wallpaper: On")} else
-                {Text("Wallpaper: Off")}
+                    Text("Wallpaper: On")
+                } else {
+                    Text("Wallpaper: Off")
+                }
                 Spacer()
-                Text("Image: \(gm.backgroundImage)")}
+                Text("Image: \(gm.backgroundImage)")
+            }
             .multilineTextAlignment(.leading)
             
+            Toggle(
+                isOn: $gm.background,
+                label: {
+                    Text("Background Image")
+                })
             
-            Toggle(isOn: $gm.background, label: {Text("Background Image")})
             //MARK: examples of background selectors
             HStack{
                 Text("Background Image")
@@ -38,7 +44,8 @@ struct SettingsView: View {
                     Text("Wood").tag("Wood")
                     Text("Cartoon Wood").tag("Cartoon Wood")
                     Text("Cloth").tag("Cloth")
-                }.pickerStyle(MenuPickerStyle())
+                }
+                .pickerStyle(MenuPickerStyle())
             }
 
             HStack{
@@ -47,7 +54,8 @@ struct SettingsView: View {
                     Text("Wood").tag("Wood")
                     Text("Cartoon Wood").tag("Cartoon Wood")
                     Text("Cloth").tag("Cloth")
-                }.pickerStyle(SegmentedPickerStyle())
+                }
+                .pickerStyle(SegmentedPickerStyle())
             }
             
            
@@ -57,15 +65,17 @@ struct SettingsView: View {
                     Text("Wood").tag("Wood")
                     Text("Cartoon Wood").tag("Cartoon Wood")
                     Text("Cloth").tag("Cloth")
-                }.pickerStyle(WheelPickerStyle())
+                }
+                .pickerStyle(WheelPickerStyle())
             }
             Spacer()
-        }.padding()
-        
-        
+        }
+        .padding()
     }
 }
 
+
+//MARK: Preview Code
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()

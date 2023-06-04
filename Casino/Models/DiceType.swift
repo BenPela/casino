@@ -15,6 +15,7 @@ struct Dice {
     var imageName:String{"d\(d).\(v)"}
 
     static var diceTypes: [Dice] {
+        // types of supported dice
         let sides = [2,3,4,5,6,8,10,12,20,100]
         var dice: [Dice] = []
         for i in sides {

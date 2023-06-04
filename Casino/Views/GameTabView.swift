@@ -34,6 +34,7 @@ struct GameTabView: View {
     }
 }
 
+//MARK: Preview Code
 struct GameTabView_Previews: PreviewProvider {
     static var previews: some View {
         GameTabView()

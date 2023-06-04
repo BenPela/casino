@@ -10,27 +10,27 @@ import SwiftUI
 struct CasinoView: View {
     @EnvironmentObject var gm: GameModel
     
-    
-    
     var body: some View {
         let bg = gm.background
         
         NavigationView {
             GeometryReader{ geo in
-                if bg {Image(gm.backgroundImage)
+                if bg {
+                    Image(gm.backgroundImage)
                         .resizable()
                         .ignoresSafeArea()
                 }
                 ScrollView {
                     
                     LazyVStack{
-                        
+                        // List of games
                         ForEach (0..<gm.gameNames.count, id: \.self) { n in
                             
                             NavigationLink(destination: gm.gameList[n],
                                            label: {
                                 GameCardView(gameName: gm.gameNames[n])
-                            }).padding()
+                            })
+                            .padding()
                             
                         }
                     }
@@ -41,6 +41,8 @@ struct CasinoView: View {
     }
     
 }
+
+//MARK: Preview Code
 struct CasinoView_Previews: PreviewProvider {
     static var previews: some View {
         CasinoView()
